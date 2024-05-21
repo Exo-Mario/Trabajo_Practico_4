@@ -1,0 +1,44 @@
+@charset "utf-8";
+.Carreras {
+            padding: 20px;
+        }
+
+        .texto {
+            margin-bottom: 40px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .nomLocalidad {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .direccion {
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .resumen {
+            margin-top: 10px;
+        }
+
+        .tabla {
+            margin-top: 20px;
+        }
+
+        .tabla table {
+            width: 100%;
+        }
+
+        .tabla table td {
+            padding: 8px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .tabla table thead td {
+            font-weight: bold;
+            border-bottom: 2px solid #000;
+        }

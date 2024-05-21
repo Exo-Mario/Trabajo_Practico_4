@@ -4,36 +4,483 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Inicio</title>
+<link href="css/base.css" rel="stylesheet" type="text/css">
 <link th:rel="stylesheet"
 	th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+<link href="css/sedesInterno.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
 	<header class="bg-light py-3">
-		<div class="container d-flex align-items-center">
-			<img src='../static/images/logo-unju.png' alt="Logotipo de la Facultad"
-				class="mr-3" style="width: 100px; height: auto;">
-			<div>
-				<h1 class="mb-0">Facultad de la Universidad Nacional de Jujuy</h1>
-				<p class="mb-0">Eslogan o lema de la facultad</p>
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-auto">
+					<img src="/images/logo-unju.png" alt="Logotipo de la Facultad"
+						class="img-fluid" style="max-width: 300px;">
+				</div>
+				<div class="col">
+					<h1 class="mb-1">Facultad de la Universidad Nacional de Jujuy</h1>
+					<p class="mb-0">Enciende tu antorcha en este fuego</p>
+				</div>
 			</div>
 		</div>
 	</header>
 
-	<nav class="navbar navbar-expand-lg bg-body-tertiary">
+	<nav class="navbar navbar-expand-lg bg-body-tertiary"
+		data-bs-theme="dark">
 		<div class="container-fluid">
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="#">Inicio</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">Acerca de...</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">Carreras</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">Noticias</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+						aria-current="page" href="#Inicio">Inicio</a></li>
+					<li class="nav-item"><a class="nav-link" href="#Acerca">Acerca
+							de...</a></li>
+					<li class="nav-item"><a class="nav-link" href="#Carreras">Carreras</a></li>
+					<li class="nav-item"><a class="nav-link" href="#Noticias">Noticias</a></li>
+					<li class="nav-item"><a class="nav-link" href="#Contacto">Contacto</a></li>
 				</ul>
 			</div>
 		</div>
 	</nav>
+
+	<aside class="bg-light col-md-1">
+		<div class="container">
+			<h2>Menú</h2>
+			<ul class="list-unstyled">
+				<li><a href="#">Biblioteca</a></li>
+				<li><a href="#">Calendario académico</a></li>
+				<!-- Agrega más elementos de menú según sea necesario -->
+			</ul>
+		</div>
+	</aside>
+
+	<section class="Carreras" id="#Carreras">
+		<h3>Carreras disponibles en SAN SALVADOR DE JUJUY</h3><br>
+		<div class="texto">
+			<div class="localidad">
+				<div class="nomLocalidad">AGRARIAS</div>
+			</div>
+			<div class="direccion">San Salvador de Jujuy - Alberdi 47</div>
+			<div class="resumen">
+				<div class="tabla">
+					<table width="500" border="0">
+						<thead>
+							<tr>
+								<td>Carrera</td>
+								<td>Título</td>
+								<td>Duración</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Ingeniería Agronómica</td>
+								<td>Ingeniero/a Agrónomo/a</td>
+								<td>5 años</td>
+							</tr>
+						</tbody>
+						<tbody>
+							<tr>
+								<td>Licenciatura en Bromatología</td>
+								<td>Licenciado/a en Bromatología</td>
+								<td>4 1/2 años</td>
+							</tr>
+						</tbody>
+						<tbody>
+							<tr>
+								<td>Licenciatura en Bromatología</td>
+								<td>Bromatólogo/a</td>
+								<td>3 años</td>
+							</tr>
+						</tbody>
+						<tbody>
+							<tr>
+								<td>Licenciatura en Ciencias Biológicas</td>
+								<td>Licenciado/a en Ciencias Biológicas</td>
+								<td>5 años</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="texto">
+			<div class="localidad">
+				<div class="nomLocalidad">ECONOMICAS</div>
+			</div>
+			<div class="direccion">San Salvador de Jujuy - Alvear 843</div>
+			<div class="resumen">
+				<div class="tabla">
+					<table width="500" border="0">
+						<thead>
+							<tr>
+								<td>Carrera</td>
+								<td>Título</td>
+								<td>Duración</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Contador Público</td>
+								<td>Contador/a Público/a</td>
+								<td>5 años</td>
+							</tr>
+						</tbody>
+
+						<tbody>
+							<tr>
+								<td>Licenciatura en Administración</td>
+								<td>Licenciado/a en Administración</td>
+								<td>4 1/2 años</td>
+							</tr>
+						</tbody>
+
+						<tbody>
+							<tr>
+								<td>Licenciatura en Economía Política</td>
+								<td>Licenciado/a en Economía Política</td>
+								<td>4 años</td>
+							</tr>
+						</tbody>
+
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="texto">
+			<div class="localidad">
+				<div class="nomLocalidad">HUMANIDADES</div>
+			</div>
+			<div class="direccion">San Salvador de Jujuy - Otero Nº 262</div>
+			<div class="resumen">
+				<div class="tabla">
+					<table width="500" border="0">
+						<thead>
+							<tr>
+								<td>Carrera</td>
+								<td>Título</td>
+								<td>Duración</td>
+							</tr>
+						</thead>
+
+						<tbody>
+							<tr>
+								<td>Licenciatura en Antropologia</td>
+								<td>Licenciado/a en Antropología</td>
+								<td>5 años</td>
+							</tr>
+						</tbody>
+
+						<tbody>
+							<tr>
+								<td>Licenciatura en Antropologia</td>
+								<td>Auxiliar Técnico en Antropología</td>
+								<td>3 años</td>
+							</tr>
+						</tbody>
+
+						<tbody>
+							<tr>
+								<td>Licenciatura en Ciencias de la Educación</td>
+								<td>Licenciado/a en Ciencias de la Educación</td>
+								<td>5 años</td>
+							</tr>
+						</tbody>
+
+						<tbody>
+							<tr>
+								<td>Profesorado en Ciencias de la Educación</td>
+								<td>Profesor/a en Ciencias de la Educación</td>
+								<td>5 años</td>
+							</tr>
+						</tbody>
+
+						<tbody>
+							<tr>
+								<td>Licenciatura en Comunicación Social</td>
+								<td>Licenciado/a en Comunicación Social</td>
+								<td>4 años</td>
+							</tr>
+						</tbody>
+
+						<tbody>
+							<tr>
+								<td>Licenciatura en Comunicación Social</td>
+								<td>Técnico/a en Comunicación Social</td>
+								<td>3 años</td>
+							</tr>
+						</tbody>
+
+						<tbody>
+							<tr>
+								<td>Licenciatura en Educación para la Salud</td>
+								<td>Licenciado/a en Educación para la Salud</td>
+								<td>5 1/2 años</td>
+							</tr>
+						</tbody>
+
+						<tbody>
+							<tr>
+								<td>Licenciatura en Educación para la Salud</td>
+								<td>Educador/a Sanitario/a</td>
+								<td>4 años</td>
+							</tr>
+						</tbody>
+
+						<tbody>
+							<tr>
+								<td>Profesorado en Educación para la Salud</td>
+								<td>Profesor/a en Educación para la Salud</td>
+								<td>4 1/2 años</td>
+							</tr>
+						</tbody>
+
+						<tbody>
+							<tr>
+								<td>Licenciatura en Letras</td>
+								<td>Licenciado/a en Letras</td>
+								<td>5 años</td>
+							</tr>
+						</tbody>
+
+						<tbody>
+							<tr>
+								<td>Profesorado en Letras</td>
+								<td>Profesor/a en Letras</td>
+								<td>4 años</td>
+							</tr>
+						</tbody>
+
+						<tbody>
+							<tr>
+								<td>Licenciatura en Trabajo Social</td>
+								<td>Licenciado/a en Trabajo Social</td>
+								<td>5 años</td>
+							</tr>
+						</tbody>
+
+						<tbody>
+							<tr>
+								<td>Licenciatura en Filosofía</td>
+								<td>Licenciado/a en Filosofía</td>
+								<td>4 años</td>
+							</tr>
+						</tbody>
+
+						<tbody>
+							<tr>
+								<td>Profesorado en Filosofía</td>
+								<td>Profesor/a en Filosofía</td>
+								<td>4 años</td>
+							</tr>
+						</tbody>
+
+						<tbody>
+							<tr>
+								<td>Licenciatura en Historia</td>
+								<td>Licenciado/a en Historia</td>
+								<td>4 años</td>
+							</tr>
+						</tbody>
+
+						<tbody>
+							<tr>
+								<td>Profesorado en Historia</td>
+								<td>Profesor/a en Historia</td>
+								<td>4 años</td>
+							</tr>
+						</tbody>
+
+						<tbody>
+							<tr>
+								<td>Tecnicatura en Comunicación Digital Convergente</td>
+								<td>Técnico/a en Comunicación Digital Convergente</td>
+								<td>3 años</td>
+							</tr>
+						</tbody>
+
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="texto">
+			<div class="localidad">
+				<div class="nomLocalidad">INGENIERIA</div>
+			</div>
+			<div class="direccion">San Salvador de Jujuy - Av. Italia esq.
+				Martiarena</div>
+			<div class="resumen">
+				<div class="tabla">
+					<table width="500" border="0">
+						<thead>
+							<tr>
+								<td>Carrera</td>
+								<td>Título</td>
+								<td>Duración</td>
+							</tr>
+						</thead>
+
+						<tbody>
+							<tr>
+								<td>Ingeniería Química</td>
+								<td>Ingeniero/a Químico/a</td>
+								<td>5 años</td>
+							</tr>
+						</tbody>
+
+						<tbody>
+							<tr>
+								<td>Ingeniería de Minas</td>
+								<td>Ingeniero/a de Minas</td>
+								<td>5 años</td>
+							</tr>
+						</tbody>
+
+						<tbody>
+							<tr>
+								<td>Ingeniería Industrial</td>
+								<td>Ingeniero/a Industrial</td>
+								<td>5 años</td>
+							</tr>
+						</tbody>
+
+						<tbody>
+							<tr>
+								<td>Ingeniería Informática</td>
+								<td>Ingeniero/a Informático/a</td>
+								<td>5 años</td>
+							</tr>
+						</tbody>
+
+						<tbody>
+							<tr>
+								<td>Licenciatura en Sistemas</td>
+								<td>Licenciado/a en Sistemas</td>
+								<td>5 años</td>
+							</tr>
+						</tbody>
+
+						<tbody>
+							<tr>
+								<td>Licenciatura en Tecnología de los Alimentos</td>
+								<td>Licenciado/a en Tecnología de los Alimentos</td>
+								<td>4 años</td>
+							</tr>
+						</tbody>
+
+						<tbody>
+							<tr>
+								<td>Licenciatura en Ciencias Geológicas</td>
+								<td>Licenciado/a en Ciencias Geológicas</td>
+								<td>5 años</td>
+							</tr>
+						</tbody>
+
+						<tbody>
+							<tr>
+								<td>Analista Programador Universitario</td>
+								<td>Analista Programador/a Universitario/a</td>
+								<td>3 años</td>
+							</tr>
+						</tbody>
+
+						<tbody>
+							<tr>
+								<td>Tecnicatura Universitaria en Perforaciones</td>
+								<td>Técnico/a Universitario/a en Perforaciones</td>
+								<td>3 años</td>
+							</tr>
+						</tbody>
+
+						<tbody>
+							<tr>
+								<td>Tecnicatura Universitaria En Diseño Integral De
+									Videojuegos</td>
+								<td>Técnico/a Universitario/a en Diseño Integral de
+									Videojuegos</td>
+								<td>3 años</td>
+							</tr>
+						</tbody>
+
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="texto">
+			<div class="localidad">
+				<div class="nomLocalidad">CIENCIAS JURIDICAS</div>
+			</div>
+			<div class="direccion">San Salvador de Jujuy - Av. Bolivia 1239</div>
+			<div class="resumen">
+				<div class="tabla">
+					<table width="500" border="0">
+						<thead>
+							<tr>
+								<td>Carrera</td>
+								<td>Título</td>
+								<td>Duración</td>
+							</tr>
+						</thead>
+
+						<tbody>
+							<tr>
+								<td>Licenciatura en Ciencia Política</td>
+								<td>Licenciado/a en Ciencia Política</td>
+								<td>4 años</td>
+							</tr>
+						</tbody>
+
+						<tbody>
+							<tr>
+								<td>Abogacía</td>
+								<td>Abogado/a</td>
+								<td>5 años</td>
+							</tr>
+						</tbody>
+
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<div class="texto">
+			<div class="localidad">
+				<div class="nomLocalidad">CIENCIAS DE LA SALUD</div>
+			</div>
+			<div class="direccion">San Salvador de Jujuy - Alvear 1153
+				2ºPiso</div>
+			<div class="resumen">
+				<div class="tabla">
+					<table width="500" border="0">
+						<thead>
+							<tr>
+								<td>Carrera</td>
+								<td>Título</td>
+								<td>Duración</td>
+							</tr>
+						</thead>
+
+						<tbody>
+							<tr>
+								<td>Enfermería Universitaria</td>
+								<td>Enfermero/a Universitario/a</td>
+								<td>3 años</td>
+							</tr>
+						</tbody>
+
+						<tbody>
+							<tr>
+								<td>Licenciatura en Enfermeria</td>
+								<td>Licenciado/a en Enfermería</td>
+								<td></td>
+							</tr>
+						</tbody>
+
+					</table>
+				</div>
+			</div>
+		</div>
+
+	</section>
 
 	<script type="text/javascript"
 		th:src="@{webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
