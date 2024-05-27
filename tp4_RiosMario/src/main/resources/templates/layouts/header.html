@@ -4,10 +4,41 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title data-th-text="${titulo}"></title>
-		<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+		<link th:rel="stylesheet" data-th-href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+		<link href="css/sedesInterno.css" rel="stylesheet" type="text/css">
 	</head>
 <body>
+	<header class="bg-light py-3" th:fragent="header">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-auto">
+					<img src="/images/logo-unju.png" alt="Logotipo de la Facultad"
+						class="img-fluid" style="max-width: 300px;">
+				</div>
+				<div class="col">
+					<h1 class="mb-1">Facultad de la Universidad Nacional de Jujuy</h1>
+					<p class="mb-0">Enciende tu antorcha en este fuego</p>
+				</div>
+			</div>
+		</div>
+	</header>
 
-	<script type="text/javascript" th:src="@{webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
+	<nav class="navbar navbar-expand-lg bg-body-tertiary"
+		data-bs-theme="dark">
+		<div class="container-fluid">
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item"><a class="nav-link active"
+						aria-current="page" href="#Inicio">Inicio</a></li>
+					<li class="nav-item"><a class="nav-link" href="#Acerca">Acerca
+							de...</a></li>
+					<li class="nav-item"><a class="nav-link" data-th-href="#Carreras">Carreras</a></li>
+					<li class="nav-item"><a class="nav-link" data-th-href="#Noticias">Noticias</a></li>
+					<li class="nav-item"><a class="nav-link" data-th-href="#Contacto">Contacto</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<script type="text/javascript" data-th-src="@{webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
 </body>
 </html>
