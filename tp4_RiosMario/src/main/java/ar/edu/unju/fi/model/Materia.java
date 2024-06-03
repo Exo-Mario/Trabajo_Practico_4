@@ -3,20 +3,21 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Materia {
-	private String codigo;
+	private int codigo;
     private String nombre;
-    private int curso;
-    private int cantidadHoras;
-    private boolean modalidad; // "virtual" o "presencial"
+    private String curso;
+    private byte cantidadHoras;
+    private String modalidad; // "virtual" o "presencial"
     private Docente docente;
     private Carrera carrera;
+    private Alumno alumno;
     
     public Materia() {
     	
     }
 
-	public Materia(String codigo, String nombre, int curso, int cantidadHoras, boolean modalidad, Docente docente,
-			Carrera carrera) {
+	public Materia(int codigo, String nombre, String curso, byte cantidadHoras, String modalidad, Docente docente,
+			Carrera carrera, Alumno alumno) {
 		this.codigo = codigo;
 		this.nombre = nombre;
 		this.curso = curso;
@@ -24,13 +25,14 @@ public class Materia {
 		this.modalidad = modalidad;
 		this.docente = docente;
 		this.carrera = carrera;
+		this.alumno = alumno;
 	}
 
-	public String getCodigo() {
+	public int getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(String codigo) {
+	public void setCodigo(int codigo) {
 		this.codigo = codigo;
 	}
 
@@ -42,27 +44,27 @@ public class Materia {
 		this.nombre = nombre;
 	}
 
-	public int getCurso() {
+	public String getCurso() {
 		return curso;
 	}
 
-	public void setCurso(int curso) {
+	public void setCurso(String curso) {
 		this.curso = curso;
 	}
 
-	public int getCantidadHoras() {
+	public byte getCantidadHoras() {
 		return cantidadHoras;
 	}
 
-	public void setCantidadHoras(int cantidadHoras) {
+	public void setCantidadHoras(byte cantidadHoras) {
 		this.cantidadHoras = cantidadHoras;
 	}
 
-	public boolean isModalidad() {
+	public String getModalidad() {
 		return modalidad;
 	}
 
-	public void setModalidad(boolean modalidad) {
+	public void setModalidad(String modalidad) {
 		this.modalidad = modalidad;
 	}
 
@@ -80,6 +82,14 @@ public class Materia {
 
 	public void setCarrera(Carrera carrera) {
 		this.carrera = carrera;
+	}
+
+	public Alumno getAlumno() {
+		return alumno;
+	}
+
+	public void setAlumno(Alumno alumno) {
+		this.alumno = alumno;
 	}
 
 }
