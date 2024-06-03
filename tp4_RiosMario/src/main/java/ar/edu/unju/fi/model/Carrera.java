@@ -8,6 +8,10 @@ public class Carrera {
     private int cantidadAnios;
     private boolean estado;
     
+    public Carrera() {
+    	
+    }
+    
 	public Carrera(int codigo, String nombre, int cantidadAnios, boolean estado) {
 		this.codigo = codigo;
 		this.nombre = nombre;

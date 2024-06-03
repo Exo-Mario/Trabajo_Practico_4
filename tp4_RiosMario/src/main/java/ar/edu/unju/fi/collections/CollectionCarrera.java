@@ -17,8 +17,8 @@ public class CollectionCarrera {
 	public static List<Carrera> getCarreras(){
 		if(carreras.isEmpty()) {
 			carreras.add(new Carrera(1,"A.P.U.",(byte)3,true));
-			carreras.add(new Carrera(1,"A.P.U.",(byte)3,true));
-			carreras.add(new Carrera(1,"A.P.U.",(byte)3,true));
+			carreras.add(new Carrera(2,"Ingeniería Informática",(byte)5,true));
+			carreras.add(new Carrera(3,"Ingeniería Química",(byte)5,false));
 		}
 		return carreras;
 	}

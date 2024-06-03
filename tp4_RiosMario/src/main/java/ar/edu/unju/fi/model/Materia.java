@@ -7,11 +7,15 @@ public class Materia {
     private String nombre;
     private int curso;
     private int cantidadHoras;
-    private String modalidad; // "virtual" o "presencial"
+    private boolean modalidad; // "virtual" o "presencial"
     private Docente docente;
     private Carrera carrera;
     
-	public Materia(String codigo, String nombre, int curso, int cantidadHoras, String modalidad, Docente docente,
+    public Materia() {
+    	
+    }
+
+	public Materia(String codigo, String nombre, int curso, int cantidadHoras, boolean modalidad, Docente docente,
 			Carrera carrera) {
 		this.codigo = codigo;
 		this.nombre = nombre;
@@ -54,11 +58,11 @@ public class Materia {
 		this.cantidadHoras = cantidadHoras;
 	}
 
-	public String getModalidad() {
+	public boolean isModalidad() {
 		return modalidad;
 	}
 
-	public void setModalidad(String modalidad) {
+	public void setModalidad(boolean modalidad) {
 		this.modalidad = modalidad;
 	}
 
@@ -77,5 +81,5 @@ public class Materia {
 	public void setCarrera(Carrera carrera) {
 		this.carrera = carrera;
 	}
-    
+
 }

@@ -11,10 +11,14 @@ public class Alumno {
     private String telefono;
     private String fechaNacimiento;
     private String domicilio;
-    private String LU;
+    private String lu;
     
+	public Alumno() {
+		
+	}
+
 	public Alumno(String dni, String nombre, String apellido, String email, String telefono, String fechaNacimiento,
-			String domicilio, String lU) {
+			String domicilio, String lu) {
 		this.dni = dni;
 		this.nombre = nombre;
 		this.apellido = apellido;
@@ -22,7 +26,7 @@ public class Alumno {
 		this.telefono = telefono;
 		this.fechaNacimiento = fechaNacimiento;
 		this.domicilio = domicilio;
-		LU = lU;
+		this.lu = lu;
 	}
 
 	public String getDni() {
@@ -81,12 +85,13 @@ public class Alumno {
 		this.domicilio = domicilio;
 	}
 
-	public String getLU() {
-		return LU;
+	public String getLu() {
+		return lu;
 	}
 
-	public void setLU(String lU) {
-		LU = lU;
+	public void setLu(String lu) {
+		this.lu = lu;
 	}
+
     
 }
