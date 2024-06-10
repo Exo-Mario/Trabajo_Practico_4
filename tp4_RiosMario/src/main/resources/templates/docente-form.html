@@ -14,7 +14,7 @@
 					<div class="row mb-3 justify-content-center">
 						<label for="lu" class="col-sm-12 col-lg-2 col-form-label text-lg-end"> Legajo</label>
 						<div class="col-sm-12 col-lg-4">
-							<input type="text" class="form-control" id="legajo" th:field="*{legajo}" th:disabled="${edicion}?true:false">
+							<input type="number" class="form-control" id="legajo" th:field="*{legajo}" th:disabled="${edicion}?true:false">
 							<input type="hidden" class="form-control" id="legajo" th:field="*{legajo}" th:if="${edicion}">
 						</div>
 					</div>
