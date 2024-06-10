@@ -3,15 +3,19 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Materia {
-	private String codigo;
+	private int codigo;
     private String nombre;
-    private int curso;
-    private int cantidadHoras;
+    private String curso;
+    private byte cantidadHoras;
     private String modalidad; // "virtual" o "presencial"
     private Docente docente;
     private Carrera carrera;
     
-	public Materia(String codigo, String nombre, int curso, int cantidadHoras, String modalidad, Docente docente,
+    public Materia() {
+    	
+    }
+
+	public Materia(int codigo, String nombre, String curso, byte cantidadHoras, String modalidad, Docente docente,
 			Carrera carrera) {
 		this.codigo = codigo;
 		this.nombre = nombre;
@@ -22,11 +26,11 @@ public class Materia {
 		this.carrera = carrera;
 	}
 
-	public String getCodigo() {
+	public int getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(String codigo) {
+	public void setCodigo(int codigo) {
 		this.codigo = codigo;
 	}
 
@@ -38,19 +42,19 @@ public class Materia {
 		this.nombre = nombre;
 	}
 
-	public int getCurso() {
+	public String getCurso() {
 		return curso;
 	}
 
-	public void setCurso(int curso) {
+	public void setCurso(String curso) {
 		this.curso = curso;
 	}
 
-	public int getCantidadHoras() {
+	public byte getCantidadHoras() {
 		return cantidadHoras;
 	}
 
-	public void setCantidadHoras(int cantidadHoras) {
+	public void setCantidadHoras(byte cantidadHoras) {
 		this.cantidadHoras = cantidadHoras;
 	}
 
@@ -77,5 +81,6 @@ public class Materia {
 	public void setCarrera(Carrera carrera) {
 		this.carrera = carrera;
 	}
-    
+
+
 }

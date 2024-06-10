@@ -3,23 +3,27 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Carrera {
-	private String codigo;
+	private int codigo;
     private String nombre;
     private int cantidadAnios;
-    private String estado;
+    private boolean estado;
     
-	public Carrera(String codigo, String nombre, int cantidadAnios, String estado) {
+    public Carrera() {
+    	
+    }
+    
+	public Carrera(int codigo, String nombre, int cantidadAnios, boolean estado) {
 		this.codigo = codigo;
 		this.nombre = nombre;
 		this.cantidadAnios = cantidadAnios;
 		this.estado = estado;
 	}
 
-	public String getCodigo() {
+	public int getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(String codigo) {
+	public void setCodigo(int codigo) {
 		this.codigo = codigo;
 	}
 
@@ -39,11 +43,11 @@ public class Carrera {
 		this.cantidadAnios = cantidadAnios;
 	}
 
-	public String getEstado() {
+	public boolean isEstado() {
 		return estado;
 	}
 
-	public void setEstado(String estado) {
+	public void setEstado(boolean estado) {
 		this.estado = estado;
 	}
     

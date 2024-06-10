@@ -1,20 +1,29 @@
 package ar.edu.unju.fi.model;
 
+import java.time.LocalDate;
+
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Alumno {
-	private String dni;
+	private String lu;
+	private long dni;
     private String nombre;
     private String apellido;
     private String email;
     private String telefono;
-    private String fechaNacimiento;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate fechaNacimiento;
     private String domicilio;
-    private String LU;
     
-	public Alumno(String dni, String nombre, String apellido, String email, String telefono, String fechaNacimiento,
-			String domicilio, String lU) {
+	public Alumno() {
+		
+	}
+
+	public Alumno(String lu, long dni, String nombre, String apellido, String email, String telefono,
+			LocalDate fechaNacimiento, String domicilio) {
+		this.lu = lu;
 		this.dni = dni;
 		this.nombre = nombre;
 		this.apellido = apellido;
@@ -22,14 +31,21 @@ public class Alumno {
 		this.telefono = telefono;
 		this.fechaNacimiento = fechaNacimiento;
 		this.domicilio = domicilio;
-		LU = lU;
 	}
 
-	public String getDni() {
+	public String getLu() {
+		return lu;
+	}
+
+	public void setLu(String lu) {
+		this.lu = lu;
+	}
+
+	public long getDni() {
 		return dni;
 	}
 
-	public void setDni(String dni) {
+	public void setDni(long dni) {
 		this.dni = dni;
 	}
 
@@ -65,11 +81,11 @@ public class Alumno {
 		this.telefono = telefono;
 	}
 
-	public String getFechaNacimiento() {
+	public LocalDate getFechaNacimiento() {
 		return fechaNacimiento;
 	}
 
-	public void setFechaNacimiento(String fechaNacimiento) {
+	public void setFechaNacimiento(LocalDate fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 
@@ -79,14 +95,6 @@ public class Alumno {
 
 	public void setDomicilio(String domicilio) {
 		this.domicilio = domicilio;
-	}
-
-	public String getLU() {
-		return LU;
-	}
-
-	public void setLU(String lU) {
-		LU = lU;
 	}
     
 }

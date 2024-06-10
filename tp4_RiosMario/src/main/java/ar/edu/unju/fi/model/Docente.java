@@ -3,13 +3,17 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Docente {
-	private String legajo;
+	private int legajo;
     private String nombre;
     private String apellido;
     private String email;
     private String telefono;
     
-	public Docente(String legajo, String nombre, String apellido, String email, String telefono) {
+    public Docente() {
+    	
+    }
+    
+	public Docente(int legajo, String nombre, String apellido, String email, String telefono) {
 		this.legajo = legajo;
 		this.nombre = nombre;
 		this.apellido = apellido;
@@ -17,11 +21,11 @@ public class Docente {
 		this.telefono = telefono;
 	}
 
-	public String getLegajo() {
+	public int getLegajo() {
 		return legajo;
 	}
 
-	public void setLegajo(String legajo) {
+	public void setLegajo(int legajo) {
 		this.legajo = legajo;
 	}
 
