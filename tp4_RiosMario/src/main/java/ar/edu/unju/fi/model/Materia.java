@@ -10,14 +10,13 @@ public class Materia {
     private String modalidad; // "virtual" o "presencial"
     private Docente docente;
     private Carrera carrera;
-    private Alumno alumno;
     
     public Materia() {
     	
     }
 
 	public Materia(int codigo, String nombre, String curso, byte cantidadHoras, String modalidad, Docente docente,
-			Carrera carrera, Alumno alumno) {
+			Carrera carrera) {
 		this.codigo = codigo;
 		this.nombre = nombre;
 		this.curso = curso;
@@ -25,7 +24,6 @@ public class Materia {
 		this.modalidad = modalidad;
 		this.docente = docente;
 		this.carrera = carrera;
-		this.alumno = alumno;
 	}
 
 	public int getCodigo() {
@@ -84,12 +82,5 @@ public class Materia {
 		this.carrera = carrera;
 	}
 
-	public Alumno getAlumno() {
-		return alumno;
-	}
-
-	public void setAlumno(Alumno alumno) {
-		this.alumno = alumno;
-	}
 
 }
