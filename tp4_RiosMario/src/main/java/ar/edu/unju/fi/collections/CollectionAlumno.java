@@ -19,7 +19,7 @@ public class CollectionAlumno {
 		if(alumnos.isEmpty()) {
 			alumnos.add(new Alumno("APU0001", 432766670L, "Mario", "Rios", "mario300401@gmail.com", "3884418273", LocalDate.of(2001, 4, 30), "General Savio - Constitución 702"));
 			alumnos.add(new Alumno("APU0002", 426509388L, "Leonardo", "Garcia", "LeoGar@gmail.com", "3884172847", LocalDate.of(2000, 4, 02), "Guemes - Balcarcel 542"));
-			alumnos.add(new Alumno("APU0003", 439681820L, "Jorge", "Gutierrez", "JorGutrrez@gmail.com", "388448912473", LocalDate.of(1994, 2, 15), "Moreno - Diamante 522"));
+			alumnos.add(new Alumno("APU0003", 439681820L, "Jorge", "Gutierrez", "JorGutrrez@gmail.com", "3884489473", LocalDate.of(1994, 2, 15), "Moreno - Diamante 522"));
 			
 		}
 		return alumnos;
