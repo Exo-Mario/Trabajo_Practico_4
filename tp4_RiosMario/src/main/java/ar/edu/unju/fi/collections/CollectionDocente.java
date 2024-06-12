@@ -60,4 +60,20 @@ private static List<Docente> docentes = new ArrayList<Docente>();
 		}
 	}
 	
+	public static Docente findDocenteByID(int id) {
+		Docente docente = new Docente();
+		for(Docente a: docentes) {
+			if(id==a.getLegajo()) {
+				docente=a;
+				break;
+			}
+		}
+		return docente;
+	}
+	
+	public static void setDocente(Docente docente) {
+		docente.setLegajo(docentes.get(docentes.size()-1).getLegajo());
+		docentes.add(docente);
+	}
+	
 }

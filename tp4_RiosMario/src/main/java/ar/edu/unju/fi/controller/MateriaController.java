@@ -22,13 +22,19 @@ import ar.edu.unju.fi.model.Materia;
 public class MateriaController {
 	@Autowired
 	private Materia materia;
+	
+	@Autowired
 	private Carrera carrera;
+	
+	@Autowired
 	private Docente docente;
 	
 	@GetMapping("/listado")
 	public String getMateriasPage(Model model) {
+		model.addAttribute("carreras", CollectionCarrera.getCarreras()); 
+		model.addAttribute("docentes", CollectionDocente.getDocentes());
 		model.addAttribute("materias", CollectionMateria.getMaterias());
-		
+		System.out.println(CollectionMateria.getMaterias());
 		model.addAttribute("titulo","Materias");
 		return "materias";
 	}
@@ -45,10 +51,10 @@ public class MateriaController {
 	}
 	
 	@PostMapping("/guardar")
-	public ModelAndView guardarmateria (@ModelAttribute("materia") Materia materia) { 
+	public ModelAndView guardarMateria (@ModelAttribute("materia") Materia materia, Model model) { 
 		ModelAndView modelView = new ModelAndView("materias");
 		carrera = CollectionCarrera.buscarCarrera(materia.getCarrera().getCodigo());
-		docente = CollectionDocente.buscarDocente (materia.getDocente().getLegajo());
+        docente = CollectionDocente.buscarDocente(materia.getDocente().getLegajo());
 		materia.setCarrera(carrera); 
 		materia.setDocente(docente);
 		CollectionMateria.agregarMateria(materia);
@@ -57,21 +63,22 @@ public class MateriaController {
 	}
 	
 	@GetMapping("/modificar/{codigo}")
-	public String getModificarmateriaPage (Model model, @PathVariable(value="codigo") int codigo) {
+	public String getModificarMateriaPage (Model model, @PathVariable(value="codigo") int codigo) {
 		Materia materiaEncontrada = new Materia();
 		boolean edicion = true;
 		materiaEncontrada = CollectionMateria.buscarMateria(codigo);
 		model.addAttribute("edicion", edicion);
-		model.addAttribute("materia", materiaEncontrada); model.addAttribute("titulo", "Modificar Materia");
-		model.addAttribute("carreras",
-		CollectionCarrera.getCarreras()); model.addAttribute("docentes", CollectionDocente.getDocentes());
+		model.addAttribute("materia", materiaEncontrada); 
+		model.addAttribute("titulo", "Modificar Materia");
+		model.addAttribute("carreras",CollectionCarrera.getCarreras()); 
+		model.addAttribute("docentes", CollectionDocente.getDocentes());
 		return "materia-form";
 	}
 	
 	@PostMapping("/modificar")
 	public String modificarMateria(@ModelAttribute("materia") Materia materia) {
-		carrera = CollectionCarrera.buscarCarrera (materia.getCarrera ().getCodigo()); 
-		docente = CollectionDocente.buscarDocente (materia.getDocente().getLegajo());
+		carrera = CollectionCarrera.buscarCarrera(materia.getCarrera().getCodigo());
+        docente = CollectionDocente.buscarDocente(materia.getDocente().getLegajo());
 		materia.setCarrera(carrera); 
 		materia.setDocente(docente);
 		CollectionMateria.modificarMateria(materia);

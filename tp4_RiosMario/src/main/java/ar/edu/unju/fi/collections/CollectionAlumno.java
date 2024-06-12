@@ -29,10 +29,10 @@ public class CollectionAlumno {
 		alumnos.add(alumno);
 	}
 	
-	public static void eliminarAlumno(String codigoAlumno) {
+	public static void eliminarAlumno(String lu) {
 		Iterator<Alumno> iterator = alumnos.iterator();
 		while(iterator.hasNext()) {
-			if(iterator.next().getLu()==codigoAlumno) {
+			if(iterator.next().getLu().equals(lu)) {
 				iterator.remove();
 			}
 		}

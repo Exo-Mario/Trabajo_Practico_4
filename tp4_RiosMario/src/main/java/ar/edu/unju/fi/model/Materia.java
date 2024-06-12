@@ -82,5 +82,11 @@ public class Materia {
 		this.carrera = carrera;
 	}
 
+	@Override
+    public String toString() {
+        return "Materia [codigo=" + codigo + ", nombre=" + nombre + ", curso=" + curso + ", cantidadHoras=" + cantidadHoras
+                + ", modalidad=" + modalidad + ", docente=" + (docente != null ? docente.getNombre() : "null")
+                + ", carrera=" + (carrera != null ? carrera.getNombre() : "null") + "]";
+    }
 
 }
