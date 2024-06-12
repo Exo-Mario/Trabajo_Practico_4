@@ -23,6 +23,8 @@ public class AlumnoController {
 	public String getAlumnosPage(Model model) {
 		model.addAttribute("alumnos", CollectionAlumno.getAlumnos());
 		model.addAttribute("titulo","Alumnos");
+		model.addAttribute("exito",false);
+		model.addAttribute("mensaje","");
 		return "alumnos";
 	}
 	
@@ -36,9 +38,17 @@ public class AlumnoController {
 	}
 	
 	@PostMapping("/guardar")
-	public ModelAndView guardarAlumno(@ModelAttribute("alumno") Alumno alumno){
+	public ModelAndView guardarAlumno(@ModelAttribute("alumno") Alumno alumno, Model model){
 		ModelAndView modelView = new ModelAndView("alumnos");
-		CollectionAlumno.agregarAlumno(alumno);
+		String mensaje;
+		boolean exito=CollectionAlumno.agregarAlumno(alumno);
+		if(exito) {
+			mensaje="Alumno guardado con éxito!";
+		}else {
+			mensaje="Alumno no se pudo guardar";
+		}
+		modelView.addObject("exito",exito);
+		modelView.addObject("mensaje",mensaje);
 		modelView.addObject("alumnos", CollectionAlumno.getAlumnos());
 		return modelView;
 	}
@@ -55,9 +65,22 @@ public class AlumnoController {
 	}
 	
 	@PostMapping("/modificar")
-	public String modificarAlumno(@ModelAttribute("alumno") Alumno alumno) {
-		CollectionAlumno.modificarAlumno(alumno);
-		return "redirect:/alumno/listado";
+	public String modificarAlumno(@ModelAttribute("alumno") Alumno alumno, Model model) {
+		boolean exito=false;
+		String mensaje="";
+		try {
+			CollectionAlumno.modificarAlumno(alumno);
+			mensaje="La alumno con libreta universitaria "+alumno.getLu()+" fue modificado con éxito!";
+			exito=true;
+		} catch (Exception e) {
+			mensaje=e.getMessage();
+			e.printStackTrace();
+		}
+		model.addAttribute("exito",exito);
+		model.addAttribute("mensaje",mensaje);
+		model.addAttribute("alumnos",CollectionAlumno.getAlumnos());
+		model.addAttribute("titulo","Alumnos");
+		return "alumnos";
 	}
 	
 	@GetMapping("/eliminar/{lu}")

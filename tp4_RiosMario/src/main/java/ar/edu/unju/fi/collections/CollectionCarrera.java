@@ -45,6 +45,7 @@ public class CollectionCarrera {
 					carre.setCantidadAnios(carrera.getCantidadAnios());
 					carre.setEstado(carrera.isEstado());
 					encontrado=true;
+					break;
 				}
 			}
 			if(!encontrado) {

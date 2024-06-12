@@ -38,19 +38,28 @@ public class CollectionAlumno {
 		}
 	}
 	
-	public static void modificarAlumno(Alumno alumno) {
-		for(Alumno alum : alumnos) {
-			if(alum.getLu()==alumno.getLu()) {
-				alum.setDni(alumno.getDni());
-				alum.setNombre(alumno.getNombre());
-				alum.setApellido(alumno.getApellido());
-				alum.setEmail(alumno.getEmail());
-				alum.setTelefono(alumno.getTelefono());
-				alum.setFechaNacimiento(alumno.getFechaNacimiento());
-				alum.setDomicilio(alumno.getDomicilio());
-			} else {
-				System.out.println("No se encuentra el código de carrera");
+	public static void modificarAlumno(Alumno alumno) throws Exception {
+		boolean encontrado = false;
+		try {
+			for(Alumno alum : alumnos) {
+				if(alum.getLu().equals(alumno.getLu())) {
+					alum.setDni(alumno.getDni());
+					alum.setNombre(alumno.getNombre());
+					alum.setApellido(alumno.getApellido());
+					alum.setEmail(alumno.getEmail());
+					alum.setTelefono(alumno.getTelefono());
+					alum.setFechaNacimiento(alumno.getFechaNacimiento());
+					alum.setDomicilio(alumno.getDomicilio());
+					encontrado=true;
+					break;
+				}
 			}
+			if(!encontrado) {
+				throw new Exception ("El alumno con libreta universitaria "+alumno.getLu()+" no existe");
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			throw e;
 		}
 	}
 	

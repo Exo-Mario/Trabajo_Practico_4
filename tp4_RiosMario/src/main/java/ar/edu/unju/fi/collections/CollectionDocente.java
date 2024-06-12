@@ -37,16 +37,25 @@ private static List<Docente> docentes = new ArrayList<Docente>();
 		}
 	}
 	
-	public static void modificarDocente(Docente docente) {
-		for(Docente doce : docentes) {
-			if(doce.getLegajo()==docente.getLegajo()) {
-				doce.setNombre(docente.getNombre());
-				doce.setApellido(docente.getApellido());
-				doce.setEmail(docente.getEmail());
-				doce.setTelefono(docente.getTelefono());
-			} else {
-				System.out.println("No se encuentra el código de carrera");
+	public static void modificarDocente(Docente docente) throws Exception {
+		boolean encontrado = false;
+		try {
+			for(Docente doce : docentes) {
+				if(doce.getLegajo()==docente.getLegajo()) {
+					doce.setNombre(docente.getNombre());
+					doce.setApellido(docente.getApellido());
+					doce.setEmail(docente.getEmail());
+					doce.setTelefono(docente.getTelefono());
+					encontrado=true;
+					break;
+				}
 			}
+			if(!encontrado) {
+				throw new Exception ("El docente con legajo "+docente.getLegajo()+" no existe");
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			throw e;
 		}
 	}
 	
