@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html xmlns:th="https://www.thymeleaf.org" lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Inicio</title>
-<link th:rel="stylesheet"
-	th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
-<link href="css/sedesInterno.css" rel="stylesheet" type="text/css">
-</head>
+<head data-th-replace="~{/layouts/header :: head}"></head>
 
 <body>
 	<div class="container-fluid">
+	
+	<header data-th-replace="~{/layouts/header :: header}"></header>
+	<nav data-th-replace="~{/layouts/header :: navbar}"></nav>
+	
+	
 		<div class="row">
 			<!-- Barra Lateral -->
 			<aside class="col-md-2 bg-light py-4">
@@ -577,9 +575,11 @@
 			</main>
 		</div>
 	</div>
+	
+	<footer data-th-replace="~{/layouts/footer :: footer}"></footer>
 
 	<script type="text/javascript"
-		th:src="@{webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
+		data-th-src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
 </body>
 
 </html>

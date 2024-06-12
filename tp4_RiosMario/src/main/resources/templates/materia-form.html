@@ -4,6 +4,8 @@
 <body>
 	<div id="container-fluid">
 	<header data-th-replace="~{/layouts/header :: header}"></header>
+	<nav data-th-replace="~{/layouts/header :: navbar}"></nav>
+	
 		<div class="row py-5 m">
 			<div class="row mb-5">
 				<h3 data-th-text="${edicion}?'Modificar Materia':'Nueva Materia'" class="text-center"></h3>
@@ -79,6 +81,6 @@
 	<footer data-th-replace="~{/layouts/footer :: footer}"></footer>
 	</div>
 	<script type="text/javascript"
-		th:src="@{webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
+		data-th-src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
 </body>
 </html>

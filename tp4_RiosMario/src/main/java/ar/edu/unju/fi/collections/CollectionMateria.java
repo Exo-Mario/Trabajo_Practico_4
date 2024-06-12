@@ -23,8 +23,8 @@ public class CollectionMateria {
 		return materias;
 	}
 	
-	public static void agregarMateria(Materia materia) {
-		materias.add(materia);
+	public static boolean agregarMateria(Materia materia) {
+		return materias.add(materia) ? true : false;
 	}
 
 	public static void eliminarMateria(int codigoMateria) {

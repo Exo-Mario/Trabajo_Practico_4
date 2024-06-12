@@ -25,8 +25,8 @@ public class CollectionAlumno {
 		return alumnos;
 	}
 	
-	public static void agregarAlumno(Alumno alumno) {
-		alumnos.add(alumno);
+	public static boolean agregarAlumno(Alumno alumno) {
+		return alumnos.add(alumno) ? true : false;
 	}
 	
 	public static void eliminarAlumno(String lu) {

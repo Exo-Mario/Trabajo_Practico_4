@@ -24,8 +24,8 @@ private static List<Docente> docentes = new ArrayList<Docente>();
 		return docentes;
 	}
 	
-	public static void agregarDocente(Docente docente) {
-		docentes.add(docente);
+	public static boolean agregarDocente(Docente docente) {
+		return docentes.add(docente) ? true : false;
 	}
 	
 	public static void eliminarDocente(int codigoDocente) {
