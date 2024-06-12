@@ -18,13 +18,16 @@ public class CollectionMateria {
 		if(materias.isEmpty()) {
 			Docente docente = CollectionDocente.buscarDocente(2);
 			Carrera carrera = CollectionCarrera.buscarCarrera(1);
+			Docente docente2 = CollectionDocente.buscarDocente(3);
+			Carrera carrera2 = CollectionCarrera.buscarCarrera(2);
 			materias.add(new Materia(1,"Programación Visual","SEGUNDO",(byte)6,"VIRTUAL",docente,carrera));
+			materias.add(new Materia(2,"Matemática Discreta","TERCERO",(byte)3,"PRESENCIAL",docente2,carrera2));
 		}
 		return materias;
 	}
 	
-	public static void agregarMateria(Materia materia) {
-		materias.add(materia);
+	public static boolean agregarMateria(Materia materia) {
+		return materias.add(materia) ? true : false;
 	}
 
 	public static void eliminarMateria(int codigoMateria) {
@@ -36,20 +39,30 @@ public class CollectionMateria {
 		}
 	}
 	
-	public static void modificarMateria(Materia materia) {
-		for(Materia mate : materias) {
-			if(mate.getCodigo()==materia.getCodigo()) {
-				mate.setCodigo(materia.getCodigo());
-				mate.setNombre(materia.getNombre());
-				mate.setCurso(materia.getCurso());
-				mate.setCantidadHoras(materia.getCantidadHoras());
-				mate.setModalidad(materia.getModalidad());
-				mate.setDocente(materia.getDocente());
-				mate.setCarrera(materia.getCarrera());
-			} else {
-				System.out.println("No se encuentra el código de carrera");
+	public static void modificarMateria(Materia materia) throws Exception {
+		boolean encontrado = false;
+		try {
+			for(Materia mate : materias) {
+				if(mate.getCodigo()==materia.getCodigo()) {
+					mate.setCodigo(materia.getCodigo());
+					mate.setNombre(materia.getNombre());
+					mate.setCurso(materia.getCurso());
+					mate.setCantidadHoras(materia.getCantidadHoras());
+					mate.setModalidad(materia.getModalidad());
+					mate.setDocente(materia.getDocente());
+					mate.setCarrera(materia.getCarrera());
+					encontrado=true;
+					break;
+				}
 			}
+			if(!encontrado) {
+				throw new Exception ("La materia con código "+materia.getCodigo()+" no existe");
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			throw e;
 		}
+		
 	}
 	
 	public static Materia buscarMateria(int codigo) {

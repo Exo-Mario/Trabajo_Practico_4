@@ -34,8 +34,9 @@ public class MateriaController {
 		model.addAttribute("carreras", CollectionCarrera.getCarreras()); 
 		model.addAttribute("docentes", CollectionDocente.getDocentes());
 		model.addAttribute("materias", CollectionMateria.getMaterias());
-		System.out.println(CollectionMateria.getMaterias());
 		model.addAttribute("titulo","Materias");
+		model.addAttribute("exito",false);
+		model.addAttribute("mensaje","");
 		return "materias";
 	}
 	
@@ -53,11 +54,19 @@ public class MateriaController {
 	@PostMapping("/guardar")
 	public ModelAndView guardarMateria (@ModelAttribute("materia") Materia materia, Model model) { 
 		ModelAndView modelView = new ModelAndView("materias");
+		String mensaje;
 		carrera = CollectionCarrera.buscarCarrera(materia.getCarrera().getCodigo());
         docente = CollectionDocente.buscarDocente(materia.getDocente().getLegajo());
 		materia.setCarrera(carrera); 
 		materia.setDocente(docente);
-		CollectionMateria.agregarMateria(materia);
+		boolean exito = CollectionMateria.agregarMateria(materia);
+		if(exito) {
+			mensaje="Carrera guardada con éxito!";
+		}else {
+			mensaje="Carrera no se pudo guardar";
+		}
+		modelView.addObject("exito",exito);
+		modelView.addObject("mensaje",mensaje);
 		modelView.addObject("materias", CollectionMateria.getMaterias());
 		return modelView;
 	}
@@ -76,13 +85,26 @@ public class MateriaController {
 	}
 	
 	@PostMapping("/modificar")
-	public String modificarMateria(@ModelAttribute("materia") Materia materia) {
+	public String modificarMateria(@ModelAttribute("materia") Materia materia, Model model) {
 		carrera = CollectionCarrera.buscarCarrera(materia.getCarrera().getCodigo());
         docente = CollectionDocente.buscarDocente(materia.getDocente().getLegajo());
 		materia.setCarrera(carrera); 
 		materia.setDocente(docente);
-		CollectionMateria.modificarMateria(materia);
-		return "redirect:/materia/listado";
+		boolean exito=false;
+		String mensaje="";
+		try {
+			CollectionMateria.modificarMateria(materia);
+			mensaje="La materia con código "+materia.getCodigo()+" fue modificada con éxito!";
+			exito=true;
+		} catch (Exception e) {
+			mensaje=e.getMessage();
+			e.printStackTrace();
+		}
+		model.addAttribute("exito",exito);
+		model.addAttribute("mensaje",mensaje);
+		model.addAttribute("materias",CollectionMateria.getMaterias());
+		model.addAttribute("titulo","Materias");
+		return "materias";
 	}
 	
 	@GetMapping("/eliminar/{codigo}")
